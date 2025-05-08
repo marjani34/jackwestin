@@ -1,0 +1,129 @@
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f8fafc;
+  overflow-x: hidden !important;
+}
+
+.hero {
+  max-width: 1080px;
+  margin: auto;
+  padding: 4rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.hero .tag {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.hero h1 {
+  font-family: 'Figtree', sans-serif;
+  font-size: 2.5rem;
+  font-variation-settings: 'wght' 650;
+  line-height: 1.2;
+  color: #111827;
+  margin-top: 0.5rem;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: #4b5563;
+}
+
+.hero-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button.primary {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button.primary:hover {
+  transform: scale(1.05);
+}
+
+button.secondary {
+  background: transparent;
+  border: none;
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hero-gallery-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.hero-gallery-2col img {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.gradient-bar {
+  height: 140px;
+  width: 110%;
+  left: -5%;
+  position: relative;
+  background: linear-gradient(130deg, #00cfff, #a855f7, #9333ea);
+  background-size: 300% 300%;
+  animation: moveGradient 15s ease infinite;
+  transform: rotate(-5deg);
+  margin-top: -10rem;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-gallery-2col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-gallery-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-gallery-2col img {
+    display: none;
+  }
+
+  .hero-gallery-2col img[alt="Zoom Class"] {
+    display: block;
+    z-index: 1;
+  }
+
+  .gradient-bar {
+    height: 120px;
+    width: 110vw;
+    transform: rotate(-3deg) translateX(-10%);
+  }
+}
